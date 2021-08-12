@@ -1,0 +1,19 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+  ],
+  "jsRules": {},
+  "rules": {
+    "prettier": [
+      false,
+      {
+        "semi": false,
+        "singleQuote": true
+      }
+    ],
+    "no-console": false,
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "max-classes-per-file": false
+  }
+}

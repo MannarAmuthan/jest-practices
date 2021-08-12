@@ -1,0 +1,24 @@
+{
+  "name": "jest-practices",
+  "version": "2.1.0",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.5"
+  },
+  "engines": {
+    "node": ">=12.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  }
+}
