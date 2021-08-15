@@ -1,25 +1,17 @@
+import {get_secret} from "../../../../src/module-mock/config";
 import { initiateProject } from "../../../../src/module-mock/project";
 
-describe("Project",()=>{
-  let mocked_get_secret=jest.fn();
+jest.mock("../../../../src/module-mock/config")
 
-  jest.mock("../../../../src/module-mock/config",() => {
-    return{
-      projectName:()=>{
-        return "mocked_project_name"
-      },
-      api_url:()=>{
-        return "mocked_api_url"
-      },
-      get_secret:mocked_get_secret
-    }
-  });
+describe("Project",()=>{
 
   it("should initiate",()=>{
-    mocked_get_secret.mockImplementation((secret_name: string,secret_version: string)=>{
-      return secret_name+" "+secret_version;
-    });
+
+    (get_secret as jest.MockedFunction<typeof get_secret>)
+      .mockReturnValue("mocked_secret_value");
 
     initiateProject();
+
+    expect(get_secret).toHaveBeenCalledWith("secret_this", "latest");
   });
 });
