@@ -25,6 +25,10 @@ export default {
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
 
+  transformIgnorePatterns: [
+    "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+  ],
+
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
   //   "/node_modules/"
@@ -89,7 +93,7 @@ export default {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
    moduleNameMapper: {
        "\\.css$": "identity-obj-proxy",
-       "\\.scss$": "identity-obj-proxy",
+       "\\.scss$": "identity-obj-proxy"
    },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
